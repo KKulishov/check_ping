@@ -1,0 +1,8 @@
+- name: Create folder 
+  file:
+    path: "{{ dst_dir }}"
+    state: directory
+    recurse: yes
+    owner: "{{ user }}"
+    group: "{{ user }}" 
+    mode: "0755"
