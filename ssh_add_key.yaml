@@ -1,3 +1,5 @@
 - hosts: all
   roles:
-    - sshadd
+    - role: sshadd
+      user: test
+      user_key: pub_key
