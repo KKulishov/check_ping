@@ -1,3 +1,13 @@
-- hosts: all
-  roles:
-    - ping
+- name: check ping 
+  hosts: all
+  become: true
+  gather_facts: yes
+
+  tasks:
+
+  - name: Example from an Ansible Playbook
+    ansible.builtin.ping:
+
+  - name: Induce an exception to see what happens
+    ansible.builtin.ping:
+      data: crash

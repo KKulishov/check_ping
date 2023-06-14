@@ -3,3 +3,17 @@
     - role: sshadd
       user: test
       user_key: pub_key
+
+
+- name: check ping 
+  hosts: all
+  become: true
+  gather_facts: yes
+
+  tasks:
+
+  - name: Deploy SSH Public Key
+    ansible.posix.authorized_key:
+      user: "{{ user }}"
+      state: present
+      key: "{{ lookup('env', 'user_key') }}"
