@@ -1,5 +1,5 @@
 ---
-  - name: Test Role
+  - name: Create folder
     hosts:
       - all
     gather_facts: true
